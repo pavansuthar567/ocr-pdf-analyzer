@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload PDF</title>
+  </head>
+  <body>
+    <h1>Upload PDF for OCR</h1>
+    <form action="/ocr" method="POST" enctype="multipart/form-data">
+      <input type="file" name="file" accept="application/pdf" required />
+      <button type="submit">Upload</button>
+    </form>
+    <% if (result) { %>
+      <h2>OCR Result</h2>
+      <pre><%= JSON.stringify(result, null, 2) %></pre>
+    <% } %>
+  </body>
+</html>
